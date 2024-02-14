@@ -127,6 +127,12 @@ function promptMenu() {
     });
 }
 
+const outputDir = "./output";
+
+if (!fs.existsSync(outputDir)) {
+  fs.mkdirSync(outputDir);
+}
+
 function renderTeam() {
   const html = render(team);
   const outputPath = "./output/team.html";
