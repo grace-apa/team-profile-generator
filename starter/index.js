@@ -10,13 +10,17 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const outputDir = "./output";
 
-fs.mkdir(outputDir, { recursive: true }, (err) => {
-  if (err) {
-    console.error("Error creating output folder:", err);
-  } else {
-    console.log("Output folder created successfully!");
-  }
-});
+// fs.mkdir(outputDir, { recursive: true }, (err) => {
+//   if (err) {
+//     console.error("Error creating output folder:", err);
+//   } else {
+//     console.log("Output folder created successfully!");
+//   }
+// });
+
+if (!fs.existsSync(outputDir)) {
+  fs.mkdirSync(outputDir);
+}
 
 const render = require("./src/page-template.js");
 
@@ -127,12 +131,6 @@ function promptMenu() {
     });
 }
 
-const outputDir = "./output";
-
-if (!fs.existsSync(outputDir)) {
-  fs.mkdirSync(outputDir);
-}
-
 function renderTeam() {
   const html = render(team);
   const outputPath = "./output/team.html";
@@ -145,4 +143,4 @@ function renderTeam() {
   });
 }
 
-promptManager();
+promptManager(outputDir);
