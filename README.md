@@ -16,6 +16,14 @@ This application generates a HTML file using input from a command-line interface
 
 ## Table of Contents
 
+- [Installation](#installation)
+- [Usage](#usage)
+- [Tests](#tests)
+- [Credits](#credits)
+- [License](#license)
+- [Badges](#badges)
+- [Features](#features)
+
 ## Installations
 
 N/A
