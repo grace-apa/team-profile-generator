@@ -8,6 +8,16 @@ const fs = require("fs");
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
+const outputDir = "./output";
+
+fs.mkdir(outputDir, { recursive: true }, (err) => {
+  if (err) {
+    console.error("Error creating output folder:", err);
+  } else {
+    console.log("Output folder created successfully!");
+  }
+});
+
 const render = require("./src/page-template.js");
 
 const team = [];
@@ -116,3 +126,17 @@ function promptMenu() {
       }
     });
 }
+
+function renderTeam() {
+  const html = render(team);
+  const outputPath = "./output/team.html";
+  fs.writeFile(outputPath, html, (err) => {
+    if (err) {
+      console.error("Error writing file:", err);
+    } else {
+      console.log("Team HTML file generated successfully!");
+    }
+  });
+}
+
+promptManager();
