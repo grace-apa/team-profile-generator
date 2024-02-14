@@ -2,11 +2,17 @@
 
 ## Description
 
-Your task is to take the given starter code and convert it into a working Node.js command-line application. This application will take in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. You have been provided with tests, so make sure every part of your code passes each provided test.
+This application takse in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person.
+
+This application generates a HTML file using input from a command-line interface.
 
 ## Features
 
--
+- Users are prompted to add employees to their team (Manager, Engineer and Intern)
+- HTML page auto generates after user has inputted all employees
+- NPM inquirer used for user input
+- NPM jest used for testing
+- ESM modules for most up to date code
 
 ## Table of Contents
 

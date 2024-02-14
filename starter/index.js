@@ -18,8 +18,10 @@ const outputDir = "./output";
 //   }
 // });
 
-if (!fs.existsSync(outputDir)) {
-  fs.mkdirSync(outputDir);
+function createOutputFolder() {
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir);
+  }
 }
 
 const render = require("./src/page-template.js");
@@ -143,4 +145,5 @@ function renderTeam() {
   });
 }
 
+createOutputFolder();
 promptManager(outputDir);
