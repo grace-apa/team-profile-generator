@@ -11,12 +11,6 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const outputDir = "./output";
 
 // fs.mkdir(outputDir, { recursive: true }, (err) => {
-//   if (err) {
-//     console.error("Error creating output folder:", err);
-//   } else {
-//     console.log("Output folder created successfully!");
-//   }
-// });
 
 function createOutputFolder() {
   if (!fs.existsSync(outputDir)) {
