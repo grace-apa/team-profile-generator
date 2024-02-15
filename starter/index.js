@@ -48,6 +48,12 @@ function promptManager() {
         type: "input",
         name: "email",
         message: "Email:",
+        validate: function (email) {
+          // Regex mail check (return true if valid mail)
+          return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(
+            email
+          );
+        },
       },
       {
         type: "input",
@@ -63,6 +69,49 @@ function promptManager() {
         answers.officeNumber
       );
       team.push(manager);
+      promptMenu();
+    });
+}
+
+function promptEngineer() {
+  console.log("Please enter the engineer's information:");
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "Name:",
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "ID:",
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "Email:",
+        validate: function (email) {
+          // Regex mail check (return true if valid mail)
+          return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(
+            email
+          );
+        },
+      },
+      {
+        type: "input",
+        name: "github",
+        message: "github:",
+      },
+    ])
+    .then((answers) => {
+      const engineer = new Engineer(
+        answers.name,
+        answers.id,
+        answers.email,
+        answers.github
+      );
+      team.push(engineer);
       promptMenu();
     });
 }
@@ -85,6 +134,12 @@ function promptIntern() {
         type: "input",
         name: "email",
         message: "Email:",
+        validate: function (email) {
+          // Regex mail check (return true if valid mail)
+          return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(
+            email
+          );
+        },
       },
       {
         type: "input",
